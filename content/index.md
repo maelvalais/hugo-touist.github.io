@@ -4,12 +4,15 @@ date: 2017-11-21T11:26:45+01:00
 draft: false
 ---
 
-Beyond the Boolean connectives of propositional logic, the input language of TouIST allows sets, conjunctions and disjunctions parametrised by sets, abbreviations...
+Beyond the Boolean connectives of propositional logic, the input language
+of TouIST allows sets, conjunctions and disjunctions parametrised by sets,
+abbreviations...
 
 ![screenshot]
 [screenshot]: ress/img/carrousel/screen1.png
 
-We can for example conveniently express and solve problems such as "Wolf, Sheep, Cabbage", or the sudoku.
+We can for example conveniently express and solve problems such as "Wolf,
+Sheep, Cabbage", or the sudoku.
 
 The team behind TouIST consists of [Frédéric Maris][fred] (Associate
 Professor),   [Olivier Gasquet][olivier] (Full Professor),   [Dominique
