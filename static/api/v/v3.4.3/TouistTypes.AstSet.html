@@ -1,0 +1,66 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="Start" href="index.html">
+<link rel="previous" href="TouistTypes.Ast.html">
+<link rel="Up" href="TouistTypes.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="TouistParse" rel="Chapter" href="TouistParse.html">
+<link title="TouistEval" rel="Chapter" href="TouistEval.html">
+<link title="TouistCnf" rel="Chapter" href="TouistCnf.html">
+<link title="TouistSmt" rel="Chapter" href="TouistSmt.html">
+<link title="TouistQbf" rel="Chapter" href="TouistQbf.html">
+<link title="TouistSatSolve" rel="Chapter" href="TouistSatSolve.html">
+<link title="TouistPprint" rel="Chapter" href="TouistPprint.html">
+<link title="TouistLatex" rel="Chapter" href="TouistLatex.html">
+<link title="TouistErr" rel="Chapter" href="TouistErr.html">
+<link title="TouistTypes" rel="Chapter" href="TouistTypes.html">
+<link title="TouistVersion" rel="Chapter" href="TouistVersion.html">
+<link title="TouistSmtSolve" rel="Chapter" href="TouistSmtSolve.html">
+<link title="TouistQbfSolve" rel="Chapter" href="TouistQbfSolve.html"><title>API reference for the TouIST library v3.4.3 : TouistTypes.AstSet</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="TouistTypes.Ast.html" title="TouistTypes.Ast">Previous</a>
+&nbsp;<a class="up" href="TouistTypes.html" title="TouistTypes">Up</a>
+&nbsp;</div>
+<h1>Module <a href="type_TouistTypes.AstSet.html">TouistTypes.AstSet</a></h1>
+
+<pre><span id="MODULEAstSet"><span class="keyword">module</span> AstSet</span>: <code class="code">sig</code> <a href="TouistTypes.AstSet.html">..</a> <code class="code">end</code></pre><hr width="100%">
+
+<pre><span class="keyword">include</span> Set.S</pre>
+
+<pre><span id="VALcombinations"><span class="keyword">val</span> combinations</span> : <code class="type">int -> t -> elt list list</code></pre><div class="info ">
+<div class="info-desc">
+<p>Return the different ways to choose k elements among a set of n
+        elements</p>
+</div>
+</div>
+
+<pre><span id="VALexact"><span class="keyword">val</span> exact</span> : <code class="type">int -> t -> (elt list * elt list) list</code></pre><div class="info ">
+<div class="info-desc">
+<p>Return a list of tuples. The first member is a combination of k
+        elements in the set and the second member is the list of every other
+        set elements not in the combination</p>
+</div>
+</div>
+
+<pre><span id="VALatleast"><span class="keyword">val</span> atleast</span> : <code class="type">int -> t -> elt list list</code></pre><div class="info ">
+<div class="info-desc">
+<p>Actually an alias for the combinations function:
+        combinations k set</p>
+</div>
+</div>
+
+<pre><span id="VALatmost"><span class="keyword">val</span> atmost</span> : <code class="type">int -> t -> elt list list</code></pre><div class="info ">
+<div class="info-desc">
+<p>Equivalent to:
+        combinations (n-k) set, where n = card(set)</p>
+</div>
+</div>
+</body></html>

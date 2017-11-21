@@ -1,0 +1,462 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="Start" href="index.html">
+<link rel="next" href="TouistTypes.AstSet.html">
+<link rel="Up" href="TouistTypes.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="TouistParse" rel="Chapter" href="TouistParse.html">
+<link title="TouistEval" rel="Chapter" href="TouistEval.html">
+<link title="TouistCnf" rel="Chapter" href="TouistCnf.html">
+<link title="TouistSmt" rel="Chapter" href="TouistSmt.html">
+<link title="TouistQbf" rel="Chapter" href="TouistQbf.html">
+<link title="TouistSatSolve" rel="Chapter" href="TouistSatSolve.html">
+<link title="TouistPprint" rel="Chapter" href="TouistPprint.html">
+<link title="TouistLatex" rel="Chapter" href="TouistLatex.html">
+<link title="TouistErr" rel="Chapter" href="TouistErr.html">
+<link title="TouistTypes" rel="Chapter" href="TouistTypes.html">
+<link title="TouistVersion" rel="Chapter" href="TouistVersion.html">
+<link title="TouistSmtSolve" rel="Chapter" href="TouistSmtSolve.html">
+<link title="TouistQbfSolve" rel="Chapter" href="TouistQbfSolve.html"><title>API reference for the TouIST library v3.4.0 : TouistTypes.Ast</title>
+</head>
+<body>
+<div class="navbar">&nbsp;<a class="up" href="TouistTypes.html" title="TouistTypes">Up</a>
+&nbsp;<a class="post" href="TouistTypes.AstSet.html" title="TouistTypes.AstSet">Next</a>
+</div>
+<h1>Module <a href="type_TouistTypes.Ast.html">TouistTypes.Ast</a></h1>
+
+<pre><span class="keyword">module</span> Ast: <code class="code">sig</code> <a href="TouistTypes.Ast.html">..</a> <code class="code">end</code></pre><hr width="100%">
+
+<pre><span id="TYPEvar"><span class="keyword">type</span> <code class="type"></code>var</span> = <code class="type">string * <a href="TouistTypes.Ast.html#TYPEt">t</a> list option</code> </pre>
+
+
+<pre><code><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = </code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.Touist_code"><span class="constructor">Touist_code</span></span> <span class="keyword">of</span> <code class="type"><a href="TouistTypes.Ast.html#TYPEt">t</a> list</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.Int"><span class="constructor">Int</span></span> <span class="keyword">of</span> <code class="type">int</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.Float"><span class="constructor">Float</span></span> <span class="keyword">of</span> <code class="type">float</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.Bool"><span class="constructor">Bool</span></span> <span class="keyword">of</span> <code class="type">bool</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.Var"><span class="constructor">Var</span></span> <span class="keyword">of</span> <code class="type"><a href="TouistTypes.Ast.html#TYPEvar">var</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.Set"><span class="constructor">Set</span></span> <span class="keyword">of</span> <code class="type">TouistTypes.AstSet.t</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.Set_decl"><span class="constructor">Set_decl</span></span> <span class="keyword">of</span> <code class="type"><a href="TouistTypes.Ast.html#TYPEt">t</a> list</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.Neg"><span class="constructor">Neg</span></span> <span class="keyword">of</span> <code class="type"><a href="TouistTypes.Ast.html#TYPEt">t</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.Add"><span class="constructor">Add</span></span> <span class="keyword">of</span> <code class="type"><a href="TouistTypes.Ast.html#TYPEt">t</a> * <a href="TouistTypes.Ast.html#TYPEt">t</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.Sub"><span class="constructor">Sub</span></span> <span class="keyword">of</span> <code class="type"><a href="TouistTypes.Ast.html#TYPEt">t</a> * <a href="TouistTypes.Ast.html#TYPEt">t</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.Mul"><span class="constructor">Mul</span></span> <span class="keyword">of</span> <code class="type"><a href="TouistTypes.Ast.html#TYPEt">t</a> * <a href="TouistTypes.Ast.html#TYPEt">t</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.Div"><span class="constructor">Div</span></span> <span class="keyword">of</span> <code class="type"><a href="TouistTypes.Ast.html#TYPEt">t</a> * <a href="TouistTypes.Ast.html#TYPEt">t</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.Mod"><span class="constructor">Mod</span></span> <span class="keyword">of</span> <code class="type"><a href="TouistTypes.Ast.html#TYPEt">t</a> * <a href="TouistTypes.Ast.html#TYPEt">t</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.Sqrt"><span class="constructor">Sqrt</span></span> <span class="keyword">of</span> <code class="type"><a href="TouistTypes.Ast.html#TYPEt">t</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.To_int"><span class="constructor">To_int</span></span> <span class="keyword">of</span> <code class="type"><a href="TouistTypes.Ast.html#TYPEt">t</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.To_float"><span class="constructor">To_float</span></span> <span class="keyword">of</span> <code class="type"><a href="TouistTypes.Ast.html#TYPEt">t</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.Abs"><span class="constructor">Abs</span></span> <span class="keyword">of</span> <code class="type"><a href="TouistTypes.Ast.html#TYPEt">t</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.Top"><span class="constructor">Top</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.Bottom"><span class="constructor">Bottom</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.Not"><span class="constructor">Not</span></span> <span class="keyword">of</span> <code class="type"><a href="TouistTypes.Ast.html#TYPEt">t</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.And"><span class="constructor">And</span></span> <span class="keyword">of</span> <code class="type"><a href="TouistTypes.Ast.html#TYPEt">t</a> * <a href="TouistTypes.Ast.html#TYPEt">t</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.Or"><span class="constructor">Or</span></span> <span class="keyword">of</span> <code class="type"><a href="TouistTypes.Ast.html#TYPEt">t</a> * <a href="TouistTypes.Ast.html#TYPEt">t</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.Xor"><span class="constructor">Xor</span></span> <span class="keyword">of</span> <code class="type"><a href="TouistTypes.Ast.html#TYPEt">t</a> * <a href="TouistTypes.Ast.html#TYPEt">t</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.Implies"><span class="constructor">Implies</span></span> <span class="keyword">of</span> <code class="type"><a href="TouistTypes.Ast.html#TYPEt">t</a> * <a href="TouistTypes.Ast.html#TYPEt">t</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.Equiv"><span class="constructor">Equiv</span></span> <span class="keyword">of</span> <code class="type"><a href="TouistTypes.Ast.html#TYPEt">t</a> * <a href="TouistTypes.Ast.html#TYPEt">t</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.Equal"><span class="constructor">Equal</span></span> <span class="keyword">of</span> <code class="type"><a href="TouistTypes.Ast.html#TYPEt">t</a> * <a href="TouistTypes.Ast.html#TYPEt">t</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.Not_equal"><span class="constructor">Not_equal</span></span> <span class="keyword">of</span> <code class="type"><a href="TouistTypes.Ast.html#TYPEt">t</a> * <a href="TouistTypes.Ast.html#TYPEt">t</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.Lesser_than"><span class="constructor">Lesser_than</span></span> <span class="keyword">of</span> <code class="type"><a href="TouistTypes.Ast.html#TYPEt">t</a> * <a href="TouistTypes.Ast.html#TYPEt">t</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.Lesser_or_equal"><span class="constructor">Lesser_or_equal</span></span> <span class="keyword">of</span> <code class="type"><a href="TouistTypes.Ast.html#TYPEt">t</a> * <a href="TouistTypes.Ast.html#TYPEt">t</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.Greater_than"><span class="constructor">Greater_than</span></span> <span class="keyword">of</span> <code class="type"><a href="TouistTypes.Ast.html#TYPEt">t</a> * <a href="TouistTypes.Ast.html#TYPEt">t</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.Greater_or_equal"><span class="constructor">Greater_or_equal</span></span> <span class="keyword">of</span> <code class="type"><a href="TouistTypes.Ast.html#TYPEt">t</a> * <a href="TouistTypes.Ast.html#TYPEt">t</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.Union"><span class="constructor">Union</span></span> <span class="keyword">of</span> <code class="type"><a href="TouistTypes.Ast.html#TYPEt">t</a> * <a href="TouistTypes.Ast.html#TYPEt">t</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.Inter"><span class="constructor">Inter</span></span> <span class="keyword">of</span> <code class="type"><a href="TouistTypes.Ast.html#TYPEt">t</a> * <a href="TouistTypes.Ast.html#TYPEt">t</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.Diff"><span class="constructor">Diff</span></span> <span class="keyword">of</span> <code class="type"><a href="TouistTypes.Ast.html#TYPEt">t</a> * <a href="TouistTypes.Ast.html#TYPEt">t</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.Range"><span class="constructor">Range</span></span> <span class="keyword">of</span> <code class="type"><a href="TouistTypes.Ast.html#TYPEt">t</a> * <a href="TouistTypes.Ast.html#TYPEt">t</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.Empty"><span class="constructor">Empty</span></span> <span class="keyword">of</span> <code class="type"><a href="TouistTypes.Ast.html#TYPEt">t</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.Card"><span class="constructor">Card</span></span> <span class="keyword">of</span> <code class="type"><a href="TouistTypes.Ast.html#TYPEt">t</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.Subset"><span class="constructor">Subset</span></span> <span class="keyword">of</span> <code class="type"><a href="TouistTypes.Ast.html#TYPEt">t</a> * <a href="TouistTypes.Ast.html#TYPEt">t</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.Powerset"><span class="constructor">Powerset</span></span> <span class="keyword">of</span> <code class="type"><a href="TouistTypes.Ast.html#TYPEt">t</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.In"><span class="constructor">In</span></span> <span class="keyword">of</span> <code class="type"><a href="TouistTypes.Ast.html#TYPEt">t</a> * <a href="TouistTypes.Ast.html#TYPEt">t</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.If"><span class="constructor">If</span></span> <span class="keyword">of</span> <code class="type"><a href="TouistTypes.Ast.html#TYPEt">t</a> * <a href="TouistTypes.Ast.html#TYPEt">t</a> * <a href="TouistTypes.Ast.html#TYPEt">t</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.Exact"><span class="constructor">Exact</span></span> <span class="keyword">of</span> <code class="type"><a href="TouistTypes.Ast.html#TYPEt">t</a> * <a href="TouistTypes.Ast.html#TYPEt">t</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.Atleast"><span class="constructor">Atleast</span></span> <span class="keyword">of</span> <code class="type"><a href="TouistTypes.Ast.html#TYPEt">t</a> * <a href="TouistTypes.Ast.html#TYPEt">t</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.Atmost"><span class="constructor">Atmost</span></span> <span class="keyword">of</span> <code class="type"><a href="TouistTypes.Ast.html#TYPEt">t</a> * <a href="TouistTypes.Ast.html#TYPEt">t</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.Bigand"><span class="constructor">Bigand</span></span> <span class="keyword">of</span> <code class="type"><a href="TouistTypes.Ast.html#TYPEt">t</a> list * <a href="TouistTypes.Ast.html#TYPEt">t</a> list * <a href="TouistTypes.Ast.html#TYPEt">t</a> option<br>        * <a href="TouistTypes.Ast.html#TYPEt">t</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.Bigor"><span class="constructor">Bigor</span></span> <span class="keyword">of</span> <code class="type"><a href="TouistTypes.Ast.html#TYPEt">t</a> list * <a href="TouistTypes.Ast.html#TYPEt">t</a> list * <a href="TouistTypes.Ast.html#TYPEt">t</a> option<br>        * <a href="TouistTypes.Ast.html#TYPEt">t</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.Let"><span class="constructor">Let</span></span> <span class="keyword">of</span> <code class="type"><a href="TouistTypes.Ast.html#TYPEt">t</a> * <a href="TouistTypes.Ast.html#TYPEt">t</a> * <a href="TouistTypes.Ast.html#TYPEt">t</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.Affect"><span class="constructor">Affect</span></span> <span class="keyword">of</span> <code class="type"><a href="TouistTypes.Ast.html#TYPEt">t</a> * <a href="TouistTypes.Ast.html#TYPEt">t</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.UnexpProp"><span class="constructor">UnexpProp</span></span> <span class="keyword">of</span> <code class="type">string * <a href="TouistTypes.Ast.html#TYPEt">t</a> list option</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.Prop"><span class="constructor">Prop</span></span> <span class="keyword">of</span> <code class="type">string</code></code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
+<code class="code">Prop</code> contains the actual proposition after the evaluation has been
+        run.
+        Example: if $d=foo and $i=123, then the <code class="code">Prop</code> is: <pre class="verbatim">            abcd(1,foo,123,a)     &lt;- an actual string that represents an actual
+                                    logical proposition                     </pre><br>
+</div>
+</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.Loc"><span class="constructor">Loc</span></span> <span class="keyword">of</span> <code class="type"><a href="TouistTypes.Ast.html#TYPEt">t</a> * <a href="TouistErr.html#TYPEloc">TouistErr.loc</a></code></code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
+<code class="code">Loc</code> is a clever (or ugly, you pick) way of keeping the locations in
+        the text of the Ast.t elements.
+        In touistParser.mly, each production rule gives its location in the original
+        text; for example, instead of simply returning
+        <code class="code">Inter (x,y)</code> the parser will return
+        <code class="code">Loc (Inter (x,y), ($startpos,$endpos))</code>.
+<p>
+
+        <code class="code">Loc</code> is used in eval.ml when checking the types; it allows to give precise
+        locations.<br>
+</div>
+</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.Paren"><span class="constructor">Paren</span></span> <span class="keyword">of</span> <code class="type"><a href="TouistTypes.Ast.html#TYPEt">t</a></code></code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
+<code class="code">Paren</code> keeps track of the parenthesis in the AST in order to print latex<br>
+</div>
+</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.Exists"><span class="constructor">Exists</span></span> <span class="keyword">of</span> <code class="type"><a href="TouistTypes.Ast.html#TYPEt">t</a> * <a href="TouistTypes.Ast.html#TYPEt">t</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.Forall"><span class="constructor">Forall</span></span> <span class="keyword">of</span> <code class="type"><a href="TouistTypes.Ast.html#TYPEt">t</a> * <a href="TouistTypes.Ast.html#TYPEt">t</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.For"><span class="constructor">For</span></span> <span class="keyword">of</span> <code class="type"><a href="TouistTypes.Ast.html#TYPEt">t</a> * <a href="TouistTypes.Ast.html#TYPEt">t</a> * <a href="TouistTypes.Ast.html#TYPEt">t</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.NewlineAfter"><span class="constructor">NewlineAfter</span></span> <span class="keyword">of</span> <code class="type"><a href="TouistTypes.Ast.html#TYPEt">t</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.NewlineBefore"><span class="constructor">NewlineBefore</span></span> <span class="keyword">of</span> <code class="type"><a href="TouistTypes.Ast.html#TYPEt">t</a></code></code></td>
+
+</tr></table>
+
+
+</body></html>

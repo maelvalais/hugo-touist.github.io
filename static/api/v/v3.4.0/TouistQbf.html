@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="Start" href="index.html">
+<link rel="previous" href="TouistSmt.html">
+<link rel="next" href="TouistSatSolve.html">
+<link rel="Up" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="TouistParse" rel="Chapter" href="TouistParse.html">
+<link title="TouistEval" rel="Chapter" href="TouistEval.html">
+<link title="TouistCnf" rel="Chapter" href="TouistCnf.html">
+<link title="TouistSmt" rel="Chapter" href="TouistSmt.html">
+<link title="TouistQbf" rel="Chapter" href="TouistQbf.html">
+<link title="TouistSatSolve" rel="Chapter" href="TouistSatSolve.html">
+<link title="TouistPprint" rel="Chapter" href="TouistPprint.html">
+<link title="TouistLatex" rel="Chapter" href="TouistLatex.html">
+<link title="TouistErr" rel="Chapter" href="TouistErr.html">
+<link title="TouistTypes" rel="Chapter" href="TouistTypes.html">
+<link title="TouistVersion" rel="Chapter" href="TouistVersion.html">
+<link title="TouistSmtSolve" rel="Chapter" href="TouistSmtSolve.html">
+<link title="TouistQbfSolve" rel="Chapter" href="TouistQbfSolve.html"><link title="Prenex and CNF" rel="Section" href="#2_PrenexandCNF">
+<link title="CNF to clauses" rel="Section" href="#2_CNFtoclauses">
+<link title="Utility functions" rel="Section" href="#2_Utilityfunctions">
+<title>API reference for the TouIST library v3.4.0 : TouistQbf</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="TouistSmt.html" title="TouistSmt">Previous</a>
+&nbsp;<a class="up" href="index.html" title="Index">Up</a>
+&nbsp;<a class="post" href="TouistSatSolve.html" title="TouistSatSolve">Next</a>
+</div>
+<h1>Module <a href="type_TouistQbf.html">TouistQbf</a></h1>
+
+<pre><span class="keyword">module</span> TouistQbf: <code class="code">sig</code> <a href="TouistQbf.html">..</a> <code class="code">end</code></pre><div class="info module top">
+Transform an evaluated AST into prenex form, CNF and QDIMACS.
+<p>
+
+    The order of calls is <a href="TouistQbf.html#VALprenex"><code class="code">TouistQbf.prenex</code></a> -&gt; <a href="TouistQbf.html#VALcnf"><code class="code">TouistQbf.cnf</code></a> -&gt; <a href="TouistQbf.html#VALprint_qdimacs"><code class="code">TouistQbf.print_qdimacs</code></a><br>
+</div>
+<hr width="100%">
+<br>
+<h2 id="2_PrenexandCNF">Prenex and CNF</h2>
+<p>
+
+    From an evaluated AST, you want to<ul>
+<li>(1) get the Prenex Normal (PNF) Form using <a href="TouistQbf.html#VALprenex"><code class="code">TouistQbf.prenex</code></a></li>
+<li>(2) on the PNF, get the Prenex-CNF using <a href="TouistQbf.html#VALcnf"><code class="code">TouistQbf.cnf</code></a></li>
+</ul>
+<br>
+
+<pre><span id="VALprenex"><span class="keyword">val</span> prenex</span> : <code class="type">?debug:bool -> TouistTypes.AstSet.elt -> <a href="TouistTypes.Ast.html#TYPEt">TouistTypes.Ast.t</a></code></pre><div class="info ">
+<code class="code">prenex ast</code> takes an evaluated AST and applies the transformation rules
+    in order to transform an evaluated AST into Prenex Normal Form (PNF).
+<p>
+
+    <b>IMPORTANT</b> Because we do not know any to transform 'xor' and '&lt;=&gt;',
+    these two connectors will be re-written using the other connectors.<br>
+<b>See also</b> <a href="https://fr.wikipedia.org/wiki/Forme_prénexe">Transformation
+         rules on Wikipedia (FR)</a><br>
+</div>
+
+<pre><span id="VALcnf"><span class="keyword">val</span> cnf</span> : <code class="type">?debug:bool -> <a href="TouistTypes.Ast.html#TYPEt">TouistTypes.Ast.t</a> -> TouistTypes.AstSet.elt</code></pre><div class="info ">
+<code class="code">cnf ast</code> calls <a href="TouistCnf.html#VALast_to_cnf"><code class="code">TouistCnf.ast_to_cnf</code></a> on the inner formula
+    (with no quantifiers) and existentially quantifies any Tseitlin
+    variable in an innermost way.
+<p>
+
+    <code class="code">ast</code> must be in Prenex Normal Form.<br>
+</div>
+
+<pre><span id="VALprint_qdimacs"><span class="keyword">val</span> print_qdimacs</span> : <code class="type">Pervasives.out_channel -> Pervasives.out_channel -> <a href="TouistTypes.Ast.html#TYPEt">TouistTypes.Ast.t</a> -> unit</code></pre><div class="info ">
+<code class="code">print_qdimacs out out_table ast</code> takes a Prenex-CNF formula
+    <a href="TouistTypes.Ast.html#TYPEt"><code class="code">TouistTypes.Ast.t</code></a> and prints the following:<ul>
+<li>1) the mapping table (litterals int to name)</li>
+<li>2) dimacs header line ('p cnf 3 2')</li>
+<li>3) the quantifiers lines grouped (one quantifier per line, beginning with
+    'e' or 'a' and ending by 0)</li>
+<li>4) the clauses (one conjunction per line, one line is a disjunction,
+    minus means 'not').</li>
+</ul>
+<br>
+</div>
+<br>
+<h2 id="2_CNFtoclauses">CNF to clauses</h2><br>
+
+<pre><code><span id="TYPEquantlist"><span class="keyword">type</span> <code class="type">'a</code> quantlist</span> = </code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTquantlist.A"><span class="constructor">A</span></span> <span class="keyword">of</span> <code class="type">'a list</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTquantlist.E"><span class="constructor">E</span></span> <span class="keyword">of</span> <code class="type">'a list</code></code></td>
+
+</tr></table>
+
+<div class="info ">
+<code class="code">A</code> means 'forall', <code class="code">E</code> means 'exists'<br>
+</div>
+
+
+<pre><span id="VALqbfclauses_of_cnf"><span class="keyword">val</span> qbfclauses_of_cnf</span> : <code class="type"><a href="TouistTypes.Ast.html#TYPEt">TouistTypes.Ast.t</a> -><br>       int <a href="TouistQbf.html#TYPEquantlist">quantlist</a> list * int list list * (int, string) Hashtbl.t</code></pre><div class="info ">
+<code class="code">qbfclauses_of_cnf</code> translates an AST (which is in CNF) to three
+    structures:<ul>
+<li>1) a list of quantlist which reprensents the grouped quantifiers in the
+         Prenex Normal Form.</li>
+<li>2) a list of lists of integers which represents the CNF formula embedded
+         in the Prenex Normal Form.</li>
+<li>3) a correspondance table 'int -&gt; litteral names'</li>
+</ul>
+<br>
+</div>
+<br>
+<h2 id="2_Utilityfunctions">Utility functions</h2><br>
+
+<pre><span id="VALis_unquant"><span class="keyword">val</span> is_unquant</span> : <code class="type">TouistTypes.AstSet.elt -> bool</code></pre><div class="info ">
+<code class="code">is_unquant</code> checks that the given formula does not contain any quantors.<br>
+</div>
+
+<pre><span id="VALis_prenex"><span class="keyword">val</span> is_prenex</span> : <code class="type">TouistTypes.AstSet.elt -> bool</code></pre>
+<pre><span id="VALregroup_quantors"><span class="keyword">val</span> regroup_quantors</span> : <code class="type"><a href="TouistTypes.Ast.html#TYPEt">TouistTypes.Ast.t</a> -><br>       string <a href="TouistQbf.html#TYPEquantlist">quantlist</a> list -><br>       string <a href="TouistQbf.html#TYPEquantlist">quantlist</a> list * <a href="TouistTypes.Ast.html#TYPEt">TouistTypes.Ast.t</a></code></pre><div class="info ">
+<code class="code">regroup_quantors</code> gathers all succeeding Forall and Exists to a list
+    of list such that each sublist only contains one type of quantor.
+    Example:   <pre class="codepre"><code class="code">      Forall ("a",Forall ("b",Exists ("c", Forall ("d",_)))
+    </code></pre>  becomes  <pre class="codepre"><code class="code">      [A of ["a";"b"]; E of ["c"]; A of ["d"]]
+    </code></pre><br>
+</div>
+</body></html>

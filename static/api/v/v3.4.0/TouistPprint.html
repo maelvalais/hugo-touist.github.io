@@ -1,0 +1,63 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="Start" href="index.html">
+<link rel="previous" href="TouistSatSolve.html">
+<link rel="next" href="TouistLatex.html">
+<link rel="Up" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="TouistParse" rel="Chapter" href="TouistParse.html">
+<link title="TouistEval" rel="Chapter" href="TouistEval.html">
+<link title="TouistCnf" rel="Chapter" href="TouistCnf.html">
+<link title="TouistSmt" rel="Chapter" href="TouistSmt.html">
+<link title="TouistQbf" rel="Chapter" href="TouistQbf.html">
+<link title="TouistSatSolve" rel="Chapter" href="TouistSatSolve.html">
+<link title="TouistPprint" rel="Chapter" href="TouistPprint.html">
+<link title="TouistLatex" rel="Chapter" href="TouistLatex.html">
+<link title="TouistErr" rel="Chapter" href="TouistErr.html">
+<link title="TouistTypes" rel="Chapter" href="TouistTypes.html">
+<link title="TouistVersion" rel="Chapter" href="TouistVersion.html">
+<link title="TouistSmtSolve" rel="Chapter" href="TouistSmtSolve.html">
+<link title="TouistQbfSolve" rel="Chapter" href="TouistQbfSolve.html"><title>API reference for the TouIST library v3.4.0 : TouistPprint</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="TouistSatSolve.html" title="TouistSatSolve">Previous</a>
+&nbsp;<a class="up" href="index.html" title="Index">Up</a>
+&nbsp;<a class="post" href="TouistLatex.html" title="TouistLatex">Next</a>
+</div>
+<h1>Module <a href="type_TouistPprint.html">TouistPprint</a></h1>
+
+<pre><span class="keyword">module</span> TouistPprint: <code class="code">sig</code> <a href="TouistPprint.html">..</a> <code class="code">end</code></pre><div class="info module top">
+Transform any AST (at any stage of transformation) to a string.<br>
+</div>
+<hr width="100%">
+
+<pre><span id="VALstring_of_ast"><span class="keyword">val</span> string_of_ast</span> : <code class="type">?utf8:bool -><br>       ?show_var:(TouistTypes.AstSet.elt -> string) -><br>       ?debug:bool -> ?parenthesis:bool -> TouistTypes.AstSet.elt -> string</code></pre><div class="info ">
+<code class="code">string_of_ast ast</code> takes an abstract syntaxic tree <code class="code">ast</code> and turn it into
+    a string using its content.
+    <code class="code">~debug:true</code> allows to include all user-hidden AST stuff.
+    <code class="code">~show_var:f</code> passes <code class="code">f</code> each time. (????)
+    <code class="code">~utf8:true</code> will output utf-8 symbols instead of plain text, e.g.,
+    ∃, ∈, ⋀ instead of exists, in, and.
+    <code class="code">~parenthesis:true</code> will display more parenthesis than usual in order to
+    show the priority on operators.
+<p>
+
+    NOTE: the <code class="code">parenthesis</code> param has not been implemented yet (!!).<br>
+</div>
+
+<pre><span id="VALstring_of_ast_list"><span class="keyword">val</span> string_of_ast_list</span> : <code class="type">?utf8:bool -><br>       ?show_var:(TouistTypes.AstSet.elt -> string) -><br>       ?debug:bool -><br>       ?parenthesis:bool -> string -> TouistTypes.AstSet.elt list -> string</code></pre><div class="info ">
+<code class="code">string_of_ast_list sep ast_list</code> does the same as <a href="TouistPprint.html#VALstring_of_ast"><code class="code">TouistPprint.string_of_ast</code></a> except
+    that it prints a list of ast separated by the string <code class="code">sep</code>.<br>
+</div>
+
+<pre><span id="VALstring_of_ast_type"><span class="keyword">val</span> string_of_ast_type</span> : <code class="type">?debug:bool -> <a href="TouistTypes.Ast.html#TYPEt">TouistTypes.Ast.t</a> -> string</code></pre><div class="info ">
+<code class="code">string_of_ast_type</code> gives the type of an AST.<br>
+</div>
+</body></html>

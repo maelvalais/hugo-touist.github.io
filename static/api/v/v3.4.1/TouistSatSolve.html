@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="TouistQbf.html">
+<link rel="next" href="TouistPprint.html">
+<link rel="Up" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="TouistParse" rel="Chapter" href="TouistParse.html">
+<link title="TouistEval" rel="Chapter" href="TouistEval.html">
+<link title="TouistCnf" rel="Chapter" href="TouistCnf.html">
+<link title="TouistSmt" rel="Chapter" href="TouistSmt.html">
+<link title="TouistQbf" rel="Chapter" href="TouistQbf.html">
+<link title="TouistSatSolve" rel="Chapter" href="TouistSatSolve.html">
+<link title="TouistPprint" rel="Chapter" href="TouistPprint.html">
+<link title="TouistLatex" rel="Chapter" href="TouistLatex.html">
+<link title="TouistErr" rel="Chapter" href="TouistErr.html">
+<link title="TouistTypes" rel="Chapter" href="TouistTypes.html">
+<link title="TouistVersion" rel="Chapter" href="TouistVersion.html">
+<link title="TouistSmtSolve" rel="Chapter" href="TouistSmtSolve.html">
+<link title="TouistQbfSolve" rel="Chapter" href="TouistQbfSolve.html"><link title="CNF to clauses" rel="Section" href="#2_CNFtoclauses">
+<link title="Solving clauses (using Minisat)" rel="Section" href="#2_SolvingclausesusingMinisat">
+<link title="Print DIMACS" rel="Section" href="#2_PrintDIMACS">
+<title>API reference for the TouIST library v3.4.1 : TouistSatSolve</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="TouistQbf.html" title="TouistQbf">Previous</a>
+&nbsp;<a class="up" href="index.html" title="Index">Up</a>
+&nbsp;<a class="post" href="TouistPprint.html" title="TouistPprint">Next</a>
+</div>
+<h1>Module <a href="type_TouistSatSolve.html">TouistSatSolve</a></h1>
+
+<pre><span class="keyword">module</span> TouistSatSolve: <code class="code">sig</code> <a href="TouistSatSolve.html">..</a> <code class="code">end</code></pre><div class="info module top">
+<b>Requires <code class="code">minisat</code></b> Process a CNF AST to clauses in order to solve
+    them with Minisat.<br>
+</div>
+<hr width="100%">
+<br>
+<h2 id="2_CNFtoclauses">CNF to clauses</h2><br>
+
+<pre><span id="VALminisat_clauses_of_cnf"><span class="keyword">val</span> minisat_clauses_of_cnf</span> : <code class="type"><a href="TouistTypes.Ast.html#TYPEt">TouistTypes.Ast.t</a> -><br>       Minisat.Lit.t list list * (Minisat.Lit.t, string) Hashtbl.t</code></pre><div class="info ">
+<code class="code">minisat_clauses_of_cnf ast</code> takes a CNF <code class="code">ast</code> and outputs<ul>
+<li>a list of lists of Minisat litterals,</li>
+<li>a mapping table (Minisat litterals -&gt; name of the proposition)</li>
+</ul>
+<br>
+</div>
+<br>
+<h2 id="2_SolvingclausesusingMinisat">Solving clauses (using Minisat)</h2><br>
+
+<pre><span class="keyword">module</span> <a href="TouistSatSolve.Model.html">Model</a>: <code class="code">sig</code> <a href="TouistSatSolve.Model.html">..</a> <code class="code">end</code></pre>
+<pre><span class="keyword">module</span> <a href="TouistSatSolve.ModelSet.html">ModelSet</a>: <code class="code">sig</code> <a href="TouistSatSolve.ModelSet.html">..</a> <code class="code">end</code></pre>
+<pre><span id="VALsolve_clauses"><span class="keyword">val</span> solve_clauses</span> : <code class="type">?verbose:bool -><br>       ?print:(<a href="TouistSatSolve.Model.html#TYPEt">Model.t</a> -> int -> unit) -><br>       ?continue:(<a href="TouistSatSolve.Model.html#TYPEt">Model.t</a> -> int -> bool) -><br>       Minisat.Lit.t list list * (Minisat.Lit.t, string) Hashtbl.t -><br>       ModelSet.t Pervasives.ref</code></pre><div class="info ">
+<code class="code">solve_clauses</code> finds the models for the given clauses.
+<p>
+
+    <code class="code">print model N </code> is a function that will print a model as soon as it is
+      found. <code class="code">N</code> is the number of the model, it begins at 1.
+      It can be useful to print the models as they appear because finding all
+      models (if <code class="code">limit</code> is large) can be extremely long.
+      Example: <code class="code">~print:(TouistSatSolve.Model.pprint table model)</code>
+<p>
+
+    <code class="code">verbose</code> allows to turn on the verbose mode of minisat; apparently, this
+      minisat feature doesn't seem to be working and doesn't display any time
+      information.
+<p>
+
+    <code class="code">continue model nth</code> is a function called after every model that has been
+      found. <code class="code">model</code> contains the found model and <code class="code">N</code> says that this model was
+      the nth model found. This function tells <code class="code">solve_clauses</code> to go on searching
+      models or not.<br>
+</div>
+
+<pre><span id="VALstring_of_clause"><span class="keyword">val</span> string_of_clause</span> : <code class="type">Minisat.Lit.t list -> string</code></pre><div class="info ">
+<code class="code">string_of_clause</code> dumps the clause in its literal-number form:
+    e.g., 1 -5 3 9 -2 -7<br>
+</div>
+
+<pre><span id="VALstring_of_clauses"><span class="keyword">val</span> string_of_clauses</span> : <code class="type">Minisat.Lit.t list list -> string</code></pre><div class="info ">
+<code class="code">string_of_clauses</code> does <a href="TouistSatSolve.html#VALstring_of_clause"><code class="code">TouistSatSolve.string_of_clause</code></a> with newlines between clauses.<br>
+</div>
+<br>
+<h2 id="2_PrintDIMACS">Print DIMACS</h2><br>
+
+<pre><span id="VALprint_dimacs"><span class="keyword">val</span> print_dimacs</span> : <code class="type">?debug_dimacs:bool -><br>       Minisat.Lit.t list list * (Minisat.Lit.t, string) Hashtbl.t -><br>       ?out_table:Pervasives.out_channel -> Pervasives.out_channel -> unit</code></pre><div class="info ">
+<code class="code">print_dimacs (clauses, table) out</code> takes the
+    result of <a href="TouistSatSolve.html#VALminisat_clauses_of_cnf"><code class="code">TouistSatSolve.minisat_clauses_of_cnf</code></a> and prints the following:<ul>
+<li>1) If <code class="code">~out_table</code> is given, print the mapping table from litterals
+         integers to names. If <code class="code">out</code> and <code class="code">out_table</code> are the same, then the
+         mapping table will be printed in DIMACS comments
+         (e.g., 'c p(a,b) 5').</li>
+<li>2) the DIMACS standard header line ('p cnf 3 2')</li>
+<li>3) the quantifiers lines grouped (one quantifier per line, beginning with
+        'e' or 'a' and ending by 0)</li>
+<li>4) the clauses (one conjunction per line, one line is a disjunction,
+         minus means 'not').</li>
+</ul>
+
+    See on Google "Satisfiability Suggested Format" (May 8, 1993)<br>
+</div>
+</body></html>

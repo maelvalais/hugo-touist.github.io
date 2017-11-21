@@ -1,0 +1,51 @@
+<div>
+    <a href="#" id="main_download" target="_blank" role="button" class="btn btn-default" data-toggle="tooltip" data-placement="top"
+        title="Jar version. Java JRE 7 required.">
+        <i class="fa fa-download" aria-hidden="true"></i>
+        Download TouIST
+        <span class="badge badge-success" id="version">v0.0.0</span>
+        <span class="badge badge-primary">
+            <i id="logo_dl" class="fa fa-spinner"></i>
+        </span>
+        <span class="badge badge-secondary">jar</span>
+    </a>
+    <a href="https://github.com/touist/touist/releases" role="button" class="btn btn-default" data-toggle="tooltip" title="Other platforms, source, unsigned native apps (.app, .exe)">
+        <i class="fa fa-download" aria-hidden="true"></i> Other downloads
+    </a>
+    <a href="#" id="github_link" role="button" class="btn btn-default">
+        <i class="fa fa-github fa-3"></i> Source</a>
+</div>
+<div>
+    <a href="doc/reference-manual.html" role="button" class="btn btn-default">
+        <span class="fa fa-book"></span> Reference manual (html)</a>
+    <a href="doc/reference-manual.pdf" class="btn btn-default" role="button">
+        <span class="fa fa-file-pdf-o"></span> Reference manual (pdf)</a>
+    <a href="api/index.html" class="btn btn-default" role="button" data-toggle="tooltip" title="TouIST can be used as an OCaml library"
+        data-html="true">
+        <span class="fa fa-book"></span> API reference</a>
+</div>
+<div>
+    <a href="https://github.com/touist/touist/blob/master/CHANGELOG" class="btn btn-default" role="button">
+        <span class="fa fa-clock-o"></span> Changelog</a>
+    <a href="doc/manual-revision.html" class="btn btn-default" role="button">
+        <span class="fa fa-files-o"></span> Revisions of the manual</a>
+</div>
+<div>
+    <a href="https://gitter.im/touist-project/touist">
+        <img src="https://badges.gitter.im/touist-project/touist.svg" alt="Gitter">
+    </a>
+    <a href="https://github.com/touist/touist/issues">
+        <img src="https://img.shields.io/github/issues/touist/touist.svg" alt="Github issues">
+    </a>
+</div>
+
+<div class="input-group" style="width: 18rem; margin-left:auto; margin-right:auto;">
+    <span class="input-group-addon" id="basic-addon1" data-toggle="tooltip">
+        <a style="color:white" href="https://opam.ocaml.org/doc/Install.html" data-toggle="tooltip" data-html="true" data-placement="left"
+            title="OPAM is a package manager for OCaml packages, similar to <code>pip</code> (python) or <code>gem</code> (ruby).<br/>
+                            To use the command-line <code>touist</code>, this is the way to go.
+                            To know more about installing OPAM, click the link.">OPAM</a>
+    </span>
+    <input type="text" class="form-control code" id="basic-url" aria-describedby="basic-addon3" onclick="this.focus();this.select()"
+        readonly="readonly" value="opam install touist">
+</div>

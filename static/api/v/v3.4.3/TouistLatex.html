@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="Start" href="index.html">
+<link rel="previous" href="TouistPprint.html">
+<link rel="next" href="TouistErr.html">
+<link rel="Up" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="TouistParse" rel="Chapter" href="TouistParse.html">
+<link title="TouistEval" rel="Chapter" href="TouistEval.html">
+<link title="TouistCnf" rel="Chapter" href="TouistCnf.html">
+<link title="TouistSmt" rel="Chapter" href="TouistSmt.html">
+<link title="TouistQbf" rel="Chapter" href="TouistQbf.html">
+<link title="TouistSatSolve" rel="Chapter" href="TouistSatSolve.html">
+<link title="TouistPprint" rel="Chapter" href="TouistPprint.html">
+<link title="TouistLatex" rel="Chapter" href="TouistLatex.html">
+<link title="TouistErr" rel="Chapter" href="TouistErr.html">
+<link title="TouistTypes" rel="Chapter" href="TouistTypes.html">
+<link title="TouistVersion" rel="Chapter" href="TouistVersion.html">
+<link title="TouistSmtSolve" rel="Chapter" href="TouistSmtSolve.html">
+<link title="TouistQbfSolve" rel="Chapter" href="TouistQbfSolve.html"><link title="Utility" rel="Section" href="#2_Utility">
+<title>API reference for the TouIST library v3.4.3 : TouistLatex</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="TouistPprint.html" title="TouistPprint">Previous</a>
+&nbsp;<a class="up" href="index.html" title="Index">Up</a>
+&nbsp;<a class="post" href="TouistErr.html" title="TouistErr">Next</a>
+</div>
+<h1>Module <a href="type_TouistLatex.html">TouistLatex</a></h1>
+
+<pre><span id="MODULETouistLatex"><span class="keyword">module</span> TouistLatex</span>: <code class="code">sig</code> <a href="TouistLatex.html">..</a> <code class="code">end</code></pre><div class="info module top">
+<div class="info-desc">
+<p>Transform any AST (at any stage of transformation) to latex.</p>
+
+<p>Note that the headers are not included; if you want to compile
+    the resulting latex text in a real latex document, you would need
+    to add (fr example):</p>
+<pre class="codepre"><code class="code">      \documentclass[11pt]{report}
+      \usepackage{mathtools}
+      \begin{document}
+        % thing produced by latex_of_ast
+      \end{document}
+    </code></pre>
+<p>Some details on the latex code produced:</p>
+<ul>
+<li>tuple-propositions <code class="code">p(a,b,c)</code> turn into p_</li>
+<li>variables are displayed in bold font and '$' is removed</li>
+<li>we use <code class="code">\mathbf{}</code> for setting bold font on variables.
+      We could use <code class="code">\bm{}</code> (which is a more appropriate way
+      of using bold-font in the math env as it keeps the 'italic'
+      way of displaying math) but <code class="code">\usepackage{bm}</code> does not work
+      with most tools: MathJax (javascript), jlatexmath (java).</li>
+</ul>
+</div>
+</div>
+<hr width="100%">
+
+<pre><span id="VALlatex_of_ast"><span class="keyword">val</span> latex_of_ast</span> : <code class="type">full:bool -> TouistTypes.AstSet.elt -> string</code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">latex_of_ast</code> turns an AST into latex. Two latex variants are targeted:</p>
+<ul>
+<li>for light latex processors (mathjax, jlatexmath), you should use
+      <code class="code">~full:false</code></li>
+<li>for fully-featured latex processors, you can use <code class="code">~full:true</code>.</li>
+</ul>
+</div>
+</div>
+<h3 id="2_Utility">Utility</h3>
+<pre><span id="VALast_fun"><span class="keyword">val</span> ast_fun</span> : <code class="type">(bool -> <a href="TouistTypes.Ast.html#TYPEt">TouistTypes.Ast.t</a> -> bool) -> bool -> <a href="TouistTypes.Ast.html#TYPEt">TouistTypes.Ast.t</a> -> bool</code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">ast_fun</code> will apply f on all *formula*-related elements of the AST where
+    cond is true. The tranversal order should not be considered.
+    Whenever a non-formula is given, acc will be immediatly returned.</p>
+</div>
+</div>
+
+<pre><span id="VALcontains_newline"><span class="keyword">val</span> contains_newline</span> : <code class="type"><a href="TouistTypes.Ast.html#TYPEt">TouistTypes.Ast.t</a> -> bool</code></pre>
+<pre><span id="VALis_binary_op"><span class="keyword">val</span> is_binary_op</span> : <code class="type"><a href="TouistTypes.Ast.html#TYPEt">TouistTypes.Ast.t</a> -> bool</code></pre>
+<pre><span id="VALcontains_binary_op"><span class="keyword">val</span> contains_binary_op</span> : <code class="type"><a href="TouistTypes.Ast.html#TYPEt">TouistTypes.Ast.t</a> -> bool</code></pre></body></html>

@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="Start" href="index.html">
+<link rel="previous" href="TouistParse.html">
+<link rel="next" href="TouistCnf.html">
+<link rel="Up" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="TouistParse" rel="Chapter" href="TouistParse.html">
+<link title="TouistEval" rel="Chapter" href="TouistEval.html">
+<link title="TouistCnf" rel="Chapter" href="TouistCnf.html">
+<link title="TouistSmt" rel="Chapter" href="TouistSmt.html">
+<link title="TouistQbf" rel="Chapter" href="TouistQbf.html">
+<link title="TouistSatSolve" rel="Chapter" href="TouistSatSolve.html">
+<link title="TouistPprint" rel="Chapter" href="TouistPprint.html">
+<link title="TouistLatex" rel="Chapter" href="TouistLatex.html">
+<link title="TouistErr" rel="Chapter" href="TouistErr.html">
+<link title="TouistTypes" rel="Chapter" href="TouistTypes.html">
+<link title="TouistVersion" rel="Chapter" href="TouistVersion.html">
+<link title="TouistSmtSolve" rel="Chapter" href="TouistSmtSolve.html">
+<link title="TouistQbfSolve" rel="Chapter" href="TouistQbfSolve.html"><title>API reference for the TouIST library v3.4.2 : TouistEval</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="TouistParse.html" title="TouistParse">Previous</a>
+&nbsp;<a class="up" href="index.html" title="Index">Up</a>
+&nbsp;<a class="post" href="TouistCnf.html" title="TouistCnf">Next</a>
+</div>
+<h1>Module <a href="type_TouistEval.html">TouistEval</a></h1>
+
+<pre><span id="MODULETouistEval"><span class="keyword">module</span> TouistEval</span>: <code class="code">sig</code> <a href="TouistEval.html">..</a> <code class="code">end</code></pre><div class="info module top">
+<div class="info-desc">
+<p>Evaluate an AST produced by <a href="TouistParse.html#VALparse_sat"><code class="code">TouistParse.parse_sat</code></a> (or any other parse
+    function) so it becomes a semantically correct formula.</p>
+
+<p><code class="code">eval</code> is the main function.</p>
+</div>
+</div>
+<hr width="100%">
+
+<pre><span id="VALeval"><span class="keyword">val</span> eval</span> : <code class="type">?smt:bool -> ?onlychecktypes:bool -> <a href="TouistTypes.Ast.html#TYPEt">TouistTypes.Ast.t</a> -> <a href="TouistTypes.Ast.html#TYPEt">TouistTypes.Ast.t</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">eval</code> checks the types, evaluates TouIST-specific constructs (variables,
+    bigand, bigor, let...) and returns an <b>evaluated</b> formula.</p>
+
+<p><code class="code">ast</code> is the AST given by <a href="TouistParse.html#VALparse_sat"><code class="code">TouistParse.parse_sat</code></a> (or any other
+    parsing function).</p>
+
+<p><code class="code">onlychecktypes</code> will limit the evaluation to its minimum in order to get
+    type errors as fast as possible.</p>
+
+<p><code class="code">smt</code> enables the SMT mode. By default, the SAT/QBF mode is used.</p>
+</div>
+<ul class="info-attributes">
+<li><b>Raises</b> <code>TouistErr.TouistFatal</code> msg where <a href="TouistErr.html#TYPEmsg"><code class="code">TouistErr.msg</code></a> contains the error.</li>
+</ul>
+</div>
+
+<pre><span id="VALast_without_loc"><span class="keyword">val</span> ast_without_loc</span> : <code class="type"><a href="TouistTypes.Ast.html#TYPEt">TouistTypes.Ast.t</a> -> <a href="TouistTypes.Ast.html#TYPEt">TouistTypes.Ast.t</a></code></pre>
+<pre><span id="VALhas_top_or_bot"><span class="keyword">val</span> has_top_or_bot</span> : <code class="type"><a href="TouistTypes.Ast.html#TYPEt">TouistTypes.Ast.t</a> -> bool</code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">has_top_or_bot ast</code> checks if there is any Bot or Top in <code class="code">ast</code>.</p>
+</div>
+</div>
+</body></html>

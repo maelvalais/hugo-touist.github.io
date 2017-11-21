@@ -1,0 +1,339 @@
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="Start" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="TouistParse" rel="Chapter" href="TouistParse.html">
+<link title="TouistEval" rel="Chapter" href="TouistEval.html">
+<link title="TouistCnf" rel="Chapter" href="TouistCnf.html">
+<link title="TouistSmt" rel="Chapter" href="TouistSmt.html">
+<link title="TouistQbf" rel="Chapter" href="TouistQbf.html">
+<link title="TouistSatSolve" rel="Chapter" href="TouistSatSolve.html">
+<link title="TouistPprint" rel="Chapter" href="TouistPprint.html">
+<link title="TouistLatex" rel="Chapter" href="TouistLatex.html">
+<link title="TouistErr" rel="Chapter" href="TouistErr.html">
+<link title="TouistTypes" rel="Chapter" href="TouistTypes.html">
+<link title="TouistVersion" rel="Chapter" href="TouistVersion.html">
+<link title="TouistSmtSolve" rel="Chapter" href="TouistSmtSolve.html">
+<link title="TouistQbfSolve" rel="Chapter" href="TouistQbfSolve.html"><title>API reference for the TouIST library v3.4.4 : Index of values</title>
+</head>
+<body>
+<div class="navbar">&nbsp;<a class="up" href="index.html" title="Index">Up</a>
+&nbsp;</div>
+<h1>Index of values</h1>
+<table>
+<tr><td align="left"><div>A</div></td></tr>
+<tr><td><a href="TouistLatex.html#VALast_fun">ast_fun</a> [<a href="TouistLatex.html">TouistLatex</a>]</td>
+<td><div class="info">
+<p><code class="code">ast_fun</code> will apply f on all *formula*-related elements of the AST where
+    cond is true.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="TouistCnf.html#VALast_to_cnf">ast_to_cnf</a> [<a href="TouistCnf.html">TouistCnf</a>]</td>
+<td><div class="info">
+<p><code class="code">ast_to_cnf</code> translates the syntaxic tree made of Or, And, Implies, Equiv...</p>
+
+</div>
+</td></tr>
+<tr><td><a href="TouistSmtSolve.html#VALast_to_yices">ast_to_yices</a> [<a href="TouistSmtSolve.html">TouistSmtSolve</a>]</td>
+<td></td></tr>
+<tr><td><a href="TouistEval.html#VALast_without_loc">ast_without_loc</a> [<a href="TouistEval.html">TouistEval</a>]</td>
+<td></td></tr>
+<tr><td><a href="TouistTypes.AstSet.html#VALatleast">atleast</a> [<a href="TouistTypes.AstSet.html">TouistTypes.AstSet</a>]</td>
+<td><div class="info">
+<p>Actually an alias for the combinations function:
+        combinations k set</p>
+
+</div>
+</td></tr>
+<tr><td><a href="TouistTypes.AstSet.html#VALatmost">atmost</a> [<a href="TouistTypes.AstSet.html">TouistTypes.AstSet</a>]</td>
+<td><div class="info">
+<p>Equivalent to:
+        combinations (n-k) set, where n = card(set)</p>
+
+</div>
+</td></tr>
+<tr><td align="left"><div>C</div></td></tr>
+<tr><td><a href="TouistCnf.html#VALclauses_of_cnf">clauses_of_cnf</a> [<a href="TouistCnf.html">TouistCnf</a>]</td>
+<td><div class="info">
+<p><code class="code">clauses_of_cnf</code> translates the cnf ast (Not, And, Or, Prop; no Bot/Top)
+    into a CNF formula that takes the form of a list of lists of litterals
+    (conjunctions of disjunctions of possibly negated proprositions).</p>
+
+</div>
+</td></tr>
+<tr><td><a href="TouistQbf.html#VALcnf">cnf</a> [<a href="TouistQbf.html">TouistQbf</a>]</td>
+<td><div class="info">
+<p><code class="code">cnf ast</code> calls <a href="TouistCnf.html#VALast_to_cnf"><code class="code">TouistCnf.ast_to_cnf</code></a> on the inner formula
+    (with no quantifiers) and existentially quantifies any Tseitlin
+    variable in an innermost way.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="TouistErr.html#VALcolor">color</a> [<a href="TouistErr.html">TouistErr</a>]</td>
+<td></td></tr>
+<tr><td><a href="TouistTypes.AstSet.html#VALcombinations">combinations</a> [<a href="TouistTypes.AstSet.html">TouistTypes.AstSet</a>]</td>
+<td><div class="info">
+<p>Return the different ways to choose k elements among a set of n
+        elements</p>
+
+</div>
+</td></tr>
+<tr><td><a href="TouistLatex.html#VALcontains_binary_op">contains_binary_op</a> [<a href="TouistLatex.html">TouistLatex</a>]</td>
+<td></td></tr>
+<tr><td><a href="TouistLatex.html#VALcontains_newline">contains_newline</a> [<a href="TouistLatex.html">TouistLatex</a>]</td>
+<td></td></tr>
+<tr><td align="left"><div>D</div></td></tr>
+<tr><td><a href="TouistErr.html#VALdiscard_warnings">discard_warnings</a> [<a href="TouistErr.html">TouistErr</a>]</td>
+<td></td></tr>
+<tr><td><a href="TouistSatSolve.ModelSet.html#VALdump">dump</a> [<a href="TouistSatSolve.ModelSet.html">TouistSatSolve.ModelSet</a>]</td>
+<td></td></tr>
+<tr><td><a href="TouistSatSolve.Model.html#VALdump">dump</a> [<a href="TouistSatSolve.Model.html">TouistSatSolve.Model</a>]</td>
+<td></td></tr>
+<tr><td align="left"><div>E</div></td></tr>
+<tr><td><a href="TouistEval.html#VALeval">eval</a> [<a href="TouistEval.html">TouistEval</a>]</td>
+<td><div class="info">
+<p><code class="code">eval</code> checks the types, evaluates TouIST-specific constructs (variables,
+    bigand, bigor, let...) and returns an <b>evaluated</b> formula.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="TouistTypes.AstSet.html#VALexact">exact</a> [<a href="TouistTypes.AstSet.html">TouistTypes.AstSet</a>]</td>
+<td><div class="info">
+<p>Return a list of tuples.</p>
+
+</div>
+</td></tr>
+<tr><td align="left"><div>F</div></td></tr>
+<tr><td><a href="TouistErr.html#VALfatal">fatal</a> [<a href="TouistErr.html">TouistErr</a>]</td>
+<td></td></tr>
+<tr><td><a href="TouistErr.html#VALformat">format</a> [<a href="TouistErr.html">TouistErr</a>]</td>
+<td></td></tr>
+<tr><td align="left"><div>G</div></td></tr>
+<tr><td><a href="TouistVersion.html#VALgit_tag">git_tag</a> [<a href="TouistVersion.html">TouistVersion</a>]</td>
+<td></td></tr>
+<tr><td align="left"><div>H</div></td></tr>
+<tr><td><a href="TouistVersion.html#VALhas_git_tag">has_git_tag</a> [<a href="TouistVersion.html">TouistVersion</a>]</td>
+<td></td></tr>
+<tr><td><a href="TouistVersion.html#VALhas_qbf">has_qbf</a> [<a href="TouistVersion.html">TouistVersion</a>]</td>
+<td></td></tr>
+<tr><td><a href="TouistEval.html#VALhas_top_or_bot">has_top_or_bot</a> [<a href="TouistEval.html">TouistEval</a>]</td>
+<td><div class="info">
+<p><code class="code">has_top_or_bot ast</code> checks if there is any Bot or Top in <code class="code">ast</code>.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="TouistVersion.html#VALhas_yices2">has_yices2</a> [<a href="TouistVersion.html">TouistVersion</a>]</td>
+<td></td></tr>
+<tr><td align="left"><div>I</div></td></tr>
+<tr><td><a href="TouistLatex.html#VALis_binary_op">is_binary_op</a> [<a href="TouistLatex.html">TouistLatex</a>]</td>
+<td></td></tr>
+<tr><td><a href="TouistCnf.html#VALis_dummy">is_dummy</a> [<a href="TouistCnf.html">TouistCnf</a>]</td>
+<td><div class="info">
+<p><code class="code">is_dummy name</code> tells (using the <code class="code">name</code> of a litteral) is a 'dummy' literal
+    that was introduced during cnf conversion; these literals are identified
+    by their prefix '&amp;'.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="TouistQbf.html#VALis_prenex">is_prenex</a> [<a href="TouistQbf.html">TouistQbf</a>]</td>
+<td></td></tr>
+<tr><td><a href="TouistQbf.html#VALis_unquant">is_unquant</a> [<a href="TouistQbf.html">TouistQbf</a>]</td>
+<td><div class="info">
+<p><code class="code">is_unquant</code> checks that the given formula does not contain any quantors.</p>
+
+</div>
+</td></tr>
+<tr><td align="left"><div>L</div></td></tr>
+<tr><td><a href="TouistLatex.html#VALlatex_of_ast">latex_of_ast</a> [<a href="TouistLatex.html">TouistLatex</a>]</td>
+<td><div class="info">
+<p><code class="code">latex_of_ast</code> turns an AST into latex.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="TouistErr.html#VALloc_format">loc_format</a> [<a href="TouistErr.html">TouistErr</a>]</td>
+<td></td></tr>
+<tr><td><a href="TouistSmtSolve.html#VALlogic_supported">logic_supported</a> [<a href="TouistSmtSolve.html">TouistSmtSolve</a>]</td>
+<td><div class="info">
+<p>Tell if this logic string (e.g., QF_LIA) is supported by Yices2.</p>
+
+</div>
+</td></tr>
+<tr><td align="left"><div>M</div></td></tr>
+<tr><td><a href="TouistSatSolve.html#VALminisat_clauses_of_cnf">minisat_clauses_of_cnf</a> [<a href="TouistSatSolve.html">TouistSatSolve</a>]</td>
+<td><div class="info">
+<p><code class="code">minisat_clauses_of_cnf ast</code> takes a CNF <code class="code">ast</code> and outputs a list of lists of Minisat litterals,, a mapping table (Minisat litterals -&gt; name of the proposition)</p>
+
+</div>
+</td></tr>
+<tr><td align="left"><div>O</div></td></tr>
+<tr><td><a href="TouistQbfSolve.html#VALocamlqbf_of_ast">ocamlqbf_of_ast</a> [<a href="TouistQbfSolve.html">TouistQbfSolve</a>]</td>
+<td></td></tr>
+<tr><td align="left"><div>P</div></td></tr>
+<tr><td><a href="TouistParse.html#VALparse_qbf">parse_qbf</a> [<a href="TouistParse.html">TouistParse</a>]</td>
+<td></td></tr>
+<tr><td><a href="TouistParse.html#VALparse_sat">parse_sat</a> [<a href="TouistParse.html">TouistParse</a>]</td>
+<td><div class="info">
+<p><code class="code">parse_sat text</code> parses <code class="code">text</code> and outputs the corresponding <code class="code">ast</code>.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="TouistParse.html#VALparse_smt">parse_smt</a> [<a href="TouistParse.html">TouistParse</a>]</td>
+<td></td></tr>
+<tr><td><a href="TouistSatSolve.ModelSet.html#VALpprint">pprint</a> [<a href="TouistSatSolve.ModelSet.html">TouistSatSolve.ModelSet</a>]</td>
+<td></td></tr>
+<tr><td><a href="TouistSatSolve.Model.html#VALpprint">pprint</a> [<a href="TouistSatSolve.Model.html">TouistSatSolve.Model</a>]</td>
+<td></td></tr>
+<tr><td><a href="TouistQbf.html#VALprenex">prenex</a> [<a href="TouistQbf.html">TouistQbf</a>]</td>
+<td><div class="info">
+<p><code class="code">prenex ast</code> takes an evaluated AST and applies the transformation rules
+    in order to transform an evaluated AST into Prenex Normal Form (PNF).</p>
+
+</div>
+</td></tr>
+<tr><td><a href="TouistCnf.html#VALprint_clauses">print_clauses</a> [<a href="TouistCnf.html">TouistCnf</a>]</td>
+<td><div class="info">
+<p><code class="code">print_clauses</code> prints one disjunction per line ended by 0:</p>
+<pre class="verbatim">       -2 1 0
+       -2 2 0
+   </pre><p>IMPORTANT: prints ONLY the clauses.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="TouistSatSolve.html#VALprint_dimacs">print_dimacs</a> [<a href="TouistSatSolve.html">TouistSatSolve</a>]</td>
+<td><div class="info">
+<p><code class="code">print_dimacs (clauses, table) out</code> takes the
+    result of <a href="TouistSatSolve.html#VALminisat_clauses_of_cnf"><code class="code">TouistSatSolve.minisat_clauses_of_cnf</code></a> and prints the following: 1) If <code class="code">~out_table</code> is given, print the mapping table from litterals
+         integers to names. If <code class="code">out</code> and <code class="code">out_table</code> are the same, then the
+         mapping table will be printed in DIMACS comments
+         (e.g., 'c p(a,b) 5')., 2) the DIMACS standard header line ('p cnf 3 2'), 3) the quantifiers lines grouped (one quantifier per line, beginning with
+        'e' or 'a' and ending by 0), 4) the clauses (one conjunction per line, one line is a disjunction,
+         minus means 'not').
+    See on Google "Satisfiability Suggested Format" (May 8, 1993)</p>
+
+</div>
+</td></tr>
+<tr><td><a href="TouistQbf.html#VALprint_qdimacs">print_qdimacs</a> [<a href="TouistQbf.html">TouistQbf</a>]</td>
+<td><div class="info">
+<p><code class="code">print_qdimacs (quants, int_clauses, int_table) out</code> takes the
+    result of <a href="TouistQbf.html#VALqbfclauses_of_cnf"><code class="code">TouistQbf.qbfclauses_of_cnf</code></a> and prints the following: 1) If <code class="code">~out_table</code> is given, print the mapping table from litterals
+         integers to names. If <code class="code">out</code> and <code class="code">out_table</code> are the same, then the
+         mapping table will be printed in DIMACS comments
+         (e.g., 'c p(a,b) 5')., 2) the DIMACS standard header line ('p cnf 3 2'), 3) the quantifiers lines grouped (one quantifier per line, beginning with
+        'e' or 'a' and ending by 0), 4) the clauses (one conjunction per line, one line is a disjunction,
+         minus means 'not').</p>
+
+</div>
+</td></tr>
+<tr><td><a href="TouistCnf.html#VALprint_table">print_table</a> [<a href="TouistCnf.html">TouistCnf</a>]</td>
+<td><div class="info">
+<p><code class="code">print_table</code> prints the correspondance table between literals (= numbers)
+    and user-defined proposition names, e.g.,</p>
+<pre class="verbatim">        p(1,2) 98
+   </pre><p>where 98 is the literal id number (given automatically) and p(1,2) is the
+    name of this proposition.</p>
+
+</div>
+</td></tr>
+<tr><td align="left"><div>Q</div></td></tr>
+<tr><td><a href="TouistQbf.html#VALqbfclauses_of_cnf">qbfclauses_of_cnf</a> [<a href="TouistQbf.html">TouistQbf</a>]</td>
+<td><div class="info">
+<p><code class="code">qbfclauses_of_cnf</code> translates an AST (which is in CNF) to the tuple
+    <code class="code">(quants, int_clauses, int_table)</code>: 1) <code class="code">quants</code> is a list of quantlist which reprensents the grouped
+         quantifiers in the Prenex Normal Form., 2) <code class="code">int_clauses</code> a list of lists of integers which represents the
+         CNF formula embedded in the Prenex Normal Form., 3) <code class="code">int_table</code> is the mapping table from litteral integers to names.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="TouistQbfSolve.html#VALqcnf_of_cnf">qcnf_of_cnf</a> [<a href="TouistQbfSolve.html">TouistQbfSolve</a>]</td>
+<td></td></tr>
+<tr><td align="left"><div>R</div></td></tr>
+<tr><td><a href="TouistQbf.html#VALregroup_quantors">regroup_quantors</a> [<a href="TouistQbf.html">TouistQbf</a>]</td>
+<td><div class="info">
+<p><code class="code">regroup_quantors</code> gathers all succeeding Forall and Exists to a list
+    of list such that each sublist only contains one type of quantor.</p>
+
+</div>
+</td></tr>
+<tr><td align="left"><div>S</div></td></tr>
+<tr><td><a href="TouistQbfSolve.html#VALsolve">solve</a> [<a href="TouistQbfSolve.html">TouistQbfSolve</a>]</td>
+<td></td></tr>
+<tr><td><a href="TouistSmtSolve.html#VALsolve">solve</a> [<a href="TouistSmtSolve.html">TouistSmtSolve</a>]</td>
+<td><div class="info">
+<p><code class="code">solve logic form</code> solves the Yices2 formula <code class="code">form</code>.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="TouistSatSolve.html#VALsolve_clauses">solve_clauses</a> [<a href="TouistSatSolve.html">TouistSatSolve</a>]</td>
+<td><div class="info">
+<p><code class="code">solve_clauses</code> finds the models for the given clauses.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="TouistPprint.html#VALstring_of_ast">string_of_ast</a> [<a href="TouistPprint.html">TouistPprint</a>]</td>
+<td><div class="info">
+<p><code class="code">string_of_ast ast</code> takes an abstract syntaxic tree <code class="code">ast</code> and turn it into
+    a string using its content.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="TouistPprint.html#VALstring_of_ast_list">string_of_ast_list</a> [<a href="TouistPprint.html">TouistPprint</a>]</td>
+<td><div class="info">
+<p><code class="code">string_of_ast_list sep ast_list</code> does the same as <a href="TouistPprint.html#VALstring_of_ast"><code class="code">TouistPprint.string_of_ast</code></a> except
+    that it prints a list of ast separated by the string <code class="code">sep</code>.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="TouistPprint.html#VALstring_of_ast_type">string_of_ast_type</a> [<a href="TouistPprint.html">TouistPprint</a>]</td>
+<td><div class="info">
+<p><code class="code">string_of_ast_type</code> gives the type of an AST.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="TouistParse.html#VALstring_of_chan">string_of_chan</a> [<a href="TouistParse.html">TouistParse</a>]</td>
+<td></td></tr>
+<tr><td><a href="TouistSatSolve.html#VALstring_of_clause">string_of_clause</a> [<a href="TouistSatSolve.html">TouistSatSolve</a>]</td>
+<td><div class="info">
+<p><code class="code">string_of_clause</code> dumps the clause in its literal-number form:
+    e.g., 1 -5 3 9 -2 -7</p>
+
+</div>
+</td></tr>
+<tr><td><a href="TouistSatSolve.html#VALstring_of_clauses">string_of_clauses</a> [<a href="TouistSatSolve.html">TouistSatSolve</a>]</td>
+<td><div class="info">
+<p><code class="code">string_of_clauses</code> does <a href="TouistSatSolve.html#VALstring_of_clause"><code class="code">TouistSatSolve.string_of_clause</code></a> with newlines between clauses.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="TouistParse.html#VALstring_of_file">string_of_file</a> [<a href="TouistParse.html">TouistParse</a>]</td>
+<td></td></tr>
+<tr><td><a href="TouistErr.html#VALstring_of_loc">string_of_loc</a> [<a href="TouistErr.html">TouistErr</a>]</td>
+<td></td></tr>
+<tr><td><a href="TouistSmtSolve.html#VALstring_of_model">string_of_model</a> [<a href="TouistSmtSolve.html">TouistSmtSolve</a>]</td>
+<td><div class="info">
+<p>Turn a model into a string.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="TouistErr.html#VALstring_of_msg">string_of_msg</a> [<a href="TouistErr.html">TouistErr</a>]</td>
+<td></td></tr>
+<tr><td align="left"><div>T</div></td></tr>
+<tr><td><a href="TouistSmt.html#VALto_smt2">to_smt2</a> [<a href="TouistSmt.html">TouistSmt</a>]</td>
+<td></td></tr>
+<tr><td align="left"><div>V</div></td></tr>
+<tr><td><a href="TouistVersion.html#VALversion">version</a> [<a href="TouistVersion.html">TouistVersion</a>]</td>
+<td></td></tr>
+<tr><td align="left"><div>W</div></td></tr>
+<tr><td><a href="TouistErr.html#VALwarn">warn</a> [<a href="TouistErr.html">TouistErr</a>]</td>
+<td></td></tr>
+<tr><td><a href="TouistErr.html#VALwrap_width">wrap_width</a> [<a href="TouistErr.html">TouistErr</a>]</td>
+<td></td></tr>
+</table>
+</body>
+</html>
