@@ -22,6 +22,21 @@ student) at the Institut de Recherche en Informatique de Toulouse
 SAToulouse. TouIST is now actively developed in context of Maël Valais'
 PhD thesis.
 
+{{< highlight go "linenos=inline" >}}
+// ... code
+{{< / highlight >}}
+
+{{< highlight html >}}
+<section id="main">
+  <div>
+    <h1 id="title">{{ .Title }}</h1>
+    {{ range .Data.Pages }}
+      {{ .Render "summary"}}
+    {{ end }}
+  </div>
+</section>
+{{< /highlight >}}
+
 [fred]: https://www.irit.fr/spip.php?page=annuaire&code=2646
 [olivier]: https://www.irit.fr/~Olivier.Gasquet
 [domi]: https://www.irit.fr/~Dominique.Longin
